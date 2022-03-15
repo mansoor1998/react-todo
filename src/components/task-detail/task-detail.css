@@ -1,0 +1,15 @@
+.task-detail {
+    /* flex: 1; */
+    /* flex-basis: 35%; */
+}
+
+
+[placeholder]:empty:before{
+    content: attr(placeholder);
+    color: #ccc;
+    /* font-style: italic; */
+}
+
+[placeholder]:empty:focus::before {
+    content: "";
+}

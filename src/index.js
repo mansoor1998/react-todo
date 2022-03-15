@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import rootReducer from './reducers/index.js';
+import { createStore } from 'redux';
+
+
+//  composeWithDevTools(
+//   applyMiddleware(...middleware),
+//   // other store enhancers if any
+// )
+
+// console.log(rootReducer);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
